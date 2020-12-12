@@ -180,3 +180,149 @@ df = pd.concat([x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17])
 df = df.reset_index()
 df = df.drop(['index'],axis=1)
 df.to_csv('data.csv',index=False)
+
+
+
+df = pd.read_csv('data1.csv')
+
+ohe = pd.get_dummies(df['3600'])
+ohe = ohe.rename(columns={1:'NSR',2:'APB',3:'AFL',4:'AFIB',5:'SVTA',6:'WPW',7:'PVC',8:'Bigeminy',9:'Trigeminy',10:'VT',11:'IVR',12:'VFL',13:'Fusion',14:'LBBBB',15:'RBBBB',16:'SDHB',17:'PR'})
+df = pd.concat([df,ohe],axis=1)
+df = df.drop(['3600'],axis=1)
+
+df.to_csv('data2.csv',index=False)
+
+for i in range(0,1000):
+    if df['Patid'][i]=='100m':
+        df['NSR'][i]=1
+        df['APB'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='101m':
+        df['NSR'][i]=1
+        df['APB'][i]=1
+    if df['Patid'][i]=='103m':
+        df['NSR'][i]=1
+        df['APB'][i]=1
+    if df['Patid'][i]=='105m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='106m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+        df['VT'][i]=1
+        df['Bigeminy'][i]=1
+    if df['Patid'][i]=='107m':
+        df['PR'][i]=1
+    if df['Patid'][i]=='108m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='109m':
+        df['LBBBB'][i]=1
+    if df['Patid'][i]=='111m':
+        df['LBBBB'][i]=1
+    if df['Patid'][i]=='112m':
+        df['NSR'][i]=1
+        df['APB'][i]=1
+    if df['Patid'][i]=='113m':
+        df['NSR'][i]=1
+    if df['Patid'][i]=='114m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+        df['APB'][i]=1
+        df['Fusion'][i]=1
+    if df['Patid'][i]=='115m':
+        df['NSR'][i]=1
+    if df['Patid'][i]=='116m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='117m':
+        df['NSR'][i]=1
+    if df['Patid'][i]=='118m':
+        df['RBBBB'][i]=1
+    if df['Patid'][i]=='119m':
+        df['Bigeminy'][i]=1
+        df['Trigeminy'][i]=1
+    if df['Patid'][i]=='121m':
+        df['NSR'][i]=1
+    if df['Patid'][i]=='122m':
+        df['NSR'][i]=1
+    if df['Patid'][i]=='123m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='124m':
+        df['RBBBB'][i]=1
+    if df['Patid'][i]=='200m':
+        df['NSR'][i]=1
+        df['Bigeminy'][i]=1
+    if df['Patid'][i]=='201m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+        df['AFIB'][i]=1
+        df['Trigeminy'][i]=1
+    if df['Patid'][i]=='202m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+        df['APB'][i]=1
+        df['AFL'][i]=1
+        df['AFIB'][i]=1
+    if df['Patid'][i]=='203m':
+        df['AFL'][i]=1
+        df['AFIB'][i]=1
+    if df['Patid'][i]=='205m':
+        df['VT'][i]=1
+        df['Fusion'][i]=1
+    if df['Patid'][i]=='207m':
+        df['IVR'][i]=1
+        df['VFL'][i]=1
+        df['SVTA'][i]=1
+    if df['Patid'][i]=='208m':
+        df['Trigeminy'][i]=1
+    if df['Patid'][i]=='209m':
+        df['NSR'][i]=1
+        df['SVTA'][i]=1
+        df['APB'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='210m':
+        df['AFIB'][i]=1
+        df['Bigeminy'][i]=1
+    if df['Patid'][i]=='212m':
+        df['RBBBB'][i]=1
+    if df['Patid'][i]=='213m':
+        df['NSR'][i]=1
+        df['Fusion'][i]=1
+        df['APB'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='214m':
+        df['LBBBB'][i]=1
+    if df['Patid'][i]=='215m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+    if df['Patid'][i]=='217m':
+        df['PR'][i]=1
+    if df['Patid'][i]=='219m':
+        df['AFIB'][i]=1
+    if df['Patid'][i]=='220m':
+        df['NSR'][i]=1
+        df['SVTA'][i]=1
+        df['APB'][i]=1
+    if df['Patid'][i]=='221m':
+        df['AFIB'][i]=1
+    if df['Patid'][i]=='222m':
+        df['AFL'][i]=1
+    if df['Patid'][i]=='223m':
+        df['VT'][i]=1
+        df['Bigeminy'][i]=1
+        df['Trigeminy'][i]=1
+    if df['Patid'][i]=='228m':
+        df['NSR'][i]=1
+        df['PVC'][i]=1
+        df['Bigeminy'][i]=1
+    if df['Patid'][i]=='230m':
+        df['WPW'][i]=1
+    if df['Patid'][i]=='231m':
+        df['SDHB'][i]=1
+    if df['Patid'][i]=='233m':
+        df['PVC'][i]=1
+        df['Bigeminy'][i]=1
+    if df['Patid'][i]=='234m':
+        df['SVTA'][i]=1
