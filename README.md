@@ -1,5 +1,11 @@
 # Assistive-Technology-Heartbeat-classification-for-Wearables
 
+### The files
+- model.py coontains the neural network used to train the data
+- explorer.py contains the code used to identify the types of ECG for each patient
+- datapipeline.py contains the code used to extract data from .mat files and convert it into csv file with categorical coloumns
+- data2.csv contains the final dataset used for training
+
 ## 📄 Abstract
 Cardio Vascular Diseases happens to be the major contributor of death rate. Heartbeat is a basic physiological function of the
 human body and it indicates and helps a lot in investigation of heart function. One non-invasive method of assessing heart
